@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Kisanbazaar</title>
+    <link rel="icon" type="image/x-icon" href="assets/kisanbazaar-favicon-color.png">
     <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+
 </head>
+
 <body>
 
-    <form action="/submit_product" method="post">
-        <label for="productName">Product Name:</label><br>
-        <input type="text" id="productName" name="productName" required><br><br>
-      
-        <label for="productDescription">Product Description:</label><br>
-        <textarea id="productDescription" name="productDescription" rows="4" cols="50" required></textarea><br><br>
-      
-        <label for="productPrice">Price:</label><br>
-        <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required><br><br>
-      
-        <label for="productQuantity">Quantity:</label><br>
-        <input type="number" id="productQuantity" name="productQuantity" min="1" required><br><br>
-      
-        <label for="productCategory">Category:</label><br>
-        <select id="productCategory" name="productCategory" required>
-          <option value="" disabled selected>Select a category</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Books">Books</option>
-          <!-- Add more options as needed -->
-        </select><br><br>
-      
-        <label for="productImage">Product Image:</label><br>
-        <input type="file" id="productImage" name="productImage" accept="image/*" required><br><br>
-      
-        <input type="submit" value="Submit">
-      </form>
+
+    <%- include('nav'); %>
+
+    <!-- Product Listing Form -->
+    <div class="form-container container my-5 p-5 glass-card">
+        <form action="/submit_product" class="container form-group" method="post">
+            <div class="form-group">
+                <label for="productName">Product Name:</label><br>
+                <input type="text" id="productName" name="productName" class="form-control" required><br><br>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Product Description:</label><br>
+                <textarea id="productDescription" name="productDescription" class="form-control" rows="4" cols="50"
+                    required></textarea><br>
+            </div>
+
+            <div class="form-group">
+                <label for="productPrice">Price:</label><br>
+                <input type="number" id="productPrice" name="productPrice" class="form-control" min="0" step="0.01"
+                    required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label><br>
+                <input type="text" id="mobileNumber" name="mobileNumber" class="form-control"
+                    required><br>
+            </div>
+
+            <!-- product Image -->
+            <div class="form-group">
+                <label for="productImage">Product Image</label><br>
+                <input type="base64" id="productImage" name="productImage" class="form-control"
+                    required><br>
+            </div>
+
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
 
 
     <!-- Modal Camera -->
-    <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class=" modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Capture Photo</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button id="closeButtonModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <!-- Camera -->
@@ -62,19 +83,21 @@
         </div>
     </div>
 
+    <img src="" alt="">
 
 
-      <img id="img1" crossorigin='anonymous'
-      src="https://hips.hearstapps.com/hmg-prod/images/red-fresh-apple-isolated-on-white-background-royalty-free-image-1627314996.jpg" alt="">
 
-    <div id="drop-area" ondragover="event.preventDefault()" ondrop="handleDrop(event)" ondragenter="event.target.classList.add('hover')" ondragleave="event.target.classList.remove('hover')">
-        <p>Drag & drop images here</p>
-    </div>
-    
-
-    
-      <script src="addProduct.js"></script>
+    <script src="addProduct.js"></script>
 
 </body>
+
+        <!-- ion-icon -->
+        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 
 </html>

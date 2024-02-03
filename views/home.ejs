@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Kisanbazaar</title>
+    <link rel="icon" type="image/x-icon" href="assets/kisanbazaar-favicon-color.png">
+    <!-- <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script> -->
+</head>
+
+<body>
+    <!-- This is nav -->
+    <nav class="container-xl" style="background-color: #F2F1EB">
+        <div class="navbar align-items-center" id="nav-container">
+            <a class="navbar-brad" href="#"><img src="assets/logo1.png" alt="" class="mainlogo1"><img
+                    src="assets/imgonline-com-ua-resize-C1WIevNuun97.png" alt="" class="mainlogo2">
+            </a>
+
+            <div class=" location-container">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle d-flex align-items-center" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <lord-icon src="https://cdn.lordicon.com/tdtlrbly.json" trigger="hover" stroke="bold"
+                            state="hover-jump-roll" colors="primary:#121331,secondary:#16c72e"
+                            style="width:25px;height:25px">
+                        </lord-icon>
+                        </lord-icon>
+                        <span class="ps-1">All India</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-light" id="location-dropdown">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-crosshair2"></i> Use current
+                                location</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li><a class="dropdown-item active" href="#">Kolkata</a></li>
+                        <li><a class="dropdown-item" href="#">Patna</a></li>
+                        <li><a class="dropdown-item" href="#">Punjab</a></li>
+                        <li><a class="dropdown-item" href="#">Lucknow</a></li>
+                        <li><a class="dropdown-item" href="#">Haryana</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Login Register Phone -->
+            <div class="login-register-btn-up">
+                <button type="button" class="btn btn-secondary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    data-bs-toggle="modal" data-bs-target="#login">Log
+                    In</button>
+                <button type="button" class="btn btn-success"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    data-bs-toggle="modal" data-bs-target="#registermodal">Sign
+                    Up</button>
+            </div>
+
+
+            <div class="search-container">
+                <nav class="navbar">
+                    <div class="container-fluid ">
+                        <form class="d-flex" role="search">
+                            <input class="form-control " type="search" placeholder="Search" aria-label="Search"
+                                id="search-box">
+                            <button class="btn  btn-lg" type="submit"><lord-icon
+                                    src="https://cdn.lordicon.com/anqzffqz.json" trigger="loop" delay="5s" stroke="bold"
+                                    state="loop-spin"
+                                    colors="primary:#121331,secondary:#c71f16,,tertiary:#d1fad7,quaternary:#b26836"
+                                    style="width:25px;height:25px">
+                                </lord-icon></button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <!-- Login Register Desktop -->
+            <div class="login-register-btn-down p-2">
+                <button type="button" class="btn btn-secondary btn-md" data-bs-toggle="modal"
+                    data-bs-target="#login">Log In</button>
+                <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal"
+                    data-bs-target="#registermodal">Sign Up</button>
+            </div>
+
+            <!-- Login Modal -->
+            <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- ...  <div class="vh-100 d-flex justify-content-center align-items-center bg-success bg-opacity-25"> -->
+                            <form
+                                class="text-center main-div  h-75 d-flex flex-column justify-content-center align-items-center">
+                                <div class=" py-3 d-flex flex-column px-0">
+                                    <a href="" class="text-success fs-1 px-0 text-decoration-none login-head">HELLO!</a>
+                                    <a href="" class="text-success fs-5 px-0 text-decoration-none ">Sign in to your
+                                        Account</a>
+
+
+                                </div>
+                                <div class="mb-3 email-box d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputEmail1" class="form-label fs-5 mb-0">Email address</label>
+                                    <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                        paria-describedby="emailHelp" placeholder="Email address">
+                                </div>
+                                <div class="mb-3 pass-box mt-0 d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputPassword1" class="form-label fs-5 mb-0">Password</label>
+                                    <input type="password" class="form-control " id="exampleInputPassword1"
+                                        placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn w-25 btn-success my-5">Sign In</button>
+                            </form>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Modal -->
+            <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="registermodal" aria-hidden="true">
+                <div class="modal-dialog modal-lg ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- ...  <div class="vh-100 d-flex justify-content-center align-items-center bg-success bg-opacity-25"> -->
+                            <form
+                                class="text-center main-div  h-75 d-flex flex-column justify-content-center align-items-center">
+                                <div class=" py-3 d-flex flex-column px-0">
+                                    <a href=""
+                                        class="text-success fs-1 px-0 text-decoration-none login-head">WELCOME!</a>
+                                    <a href="" class="text-success fs-5 px-0 text-decoration-none ">Register your
+                                        Account</a>
+                                </div>
+                                <div class="mb-3 email-box d-flex align-items-start w-100">
+                                    <div class="d-flex flex-column align-items-start first-name w-50">
+                                        <label for="exampleInputEmail1" class="form-label fs-5 mb-0 ">First Name</label>
+                                        <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                            paria-describedby="emailHelp" placeholder="First Name">
+                                    </div>
+                                    <div class="d-flex flex-column align-items-start w-50">
+                                        <label for="exampleInputEmail1" class="form-label fs-5 mb-0 ">Last Name</label>
+                                        <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                            paria-describedby="emailHelp" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="mb-3 email-box d-flex align-items-start w-100">
+                                    <div class="d-flex flex-column align-items-start first-name w-50">
+                                        <label for="exampleInputEmail1" class="form-label fs-5 mb-0 ">City</label>
+                                        <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                            paria-describedby="emailHelp" placeholder="City">
+                                    </div>
+                                    <div class="d-flex flex-column align-items-start first-name w-50">
+                                        <label for="exampleInputEmail1" class="form-label fs-5 mb-0 ">State</label>
+                                        <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                            paria-describedby="emailHelp" placeholder="State">
+                                    </div>
+                                    <div class="d-flex flex-column align-items-start w-50">
+                                        <label for="exampleInputEmail1" class="form-label fs-5 mb-0 ">Pincode</label>
+                                        <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                            paria-describedby="emailHelp" placeholder="Pincode">
+                                    </div>
+                                </div>
+                                <div class="mb-3 email-box d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputEmail1" class="form-label fs-5 mb-0">Phone</label>
+                                    <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                        paria-describedby="emailHelp" placeholder="+91 _">
+                                </div>
+                                <div class="mb-3 email-box d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputEmail1" class="form-label fs-5 mb-0">Email address</label>
+                                    <input type="email" class="form-control w-100 h-50" id="exampleInputEmail1"
+                                        paria-describedby="emailHelp" placeholder="Email address">
+                                </div>
+                                <div class="mb-3 pass-box mt-0 d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputPassword1" class="form-label fs-5 mb-0">Password</label>
+                                    <input type="password" class="form-control " id="exampleInputPassword1"
+                                        placeholder="Password">
+                                </div>
+                                <div class="mb-3 pass-box mt-0 d-flex flex-column align-items-start w-100 ">
+                                    <label for="exampleInputPassword1" class="form-label fs-5 mb-0">Membership
+                                        Type</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Farmer</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Customer</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn w-25 btn-success my-5">Sign Up</button>
+                            </form>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Main Button -->
+    <div class="main-btn">
+        <button class="btn-graph" data-bs-toggle="modal" data-bs-target="#graphModal">
+            <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="loop"
+                    delay="1000" stroke="bold" state="loop-all" style="width:50px;height:50px">
+                </lord-icon></div>
+        </button>
+
+        <button class="btn-demand" data-bs-toggle="modal" data-bs-target="#cameraModal">
+            <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/vneufqmz.json" trigger="loop"
+                    delay="2000" style="width:50px;height:50px">
+                </lord-icon></div>
+        </button>
+    </div>
+
+    <div class="btn-home">
+        <img src="assets/kisanbazaar-favicon-color.png" alt="" style="height: 70px; width: 70px;">
+    </div>
+
+
+
+
+    <!-- Modal Graph -->
+    <div class="modal fade" id="graphModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content container">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detailed Graph</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Graph -->
+                    <canvas class="horizontalBar"></canvas>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Camera -->
+    <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Capture Photo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <!-- Camera -->
+                    <div id="video-container">
+                        <video id="video" autoplay></video>
+                    </div>
+                </div>
+                <div id="button-container">
+                    <button id="capture-btn" type="button" class="btn btn-danger"><i
+                            class="bi bi-camera-fill"></i></button>
+                    <button id="switch-camera-btn" type="button" class="btn btn-primary"><i
+                            class="bi bi-arrow-repeat"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <div class="hero-main-container">
+        <img src="assets/a1.png" alt="" class="hero-img-1">
+        <img src="assets/a2.png" alt="" class="hero-img-2">
+        <img src="assets/a3.png" alt="" class="hero-img-3">
+        <img src="assets/a4.png" alt="" class="hero-img-4">
+        <img src="assets/pointer.png" alt="" class="hero-img-5">
+        <div class="mic-button-container">
+            <button id="audioButton" class="intro-sound"><lord-icon src="https://cdn.lordicon.com/bpmdxzpd.json"
+                    trigger="loop" delay="1000" style="width:60px;height:60px">
+                </lord-icon></button>
+        </div>
+        <audio id="audioPlayer" src="assets/intro.m4a" autoplay></audio>
+        <div class="container-hero">
+            <div class="glass-card">
+                <h1>Buy and Sell<br>
+                    with Kisanbazaar!</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xl mt-5 d-flex flex-wrap gap-3">
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+        <!-- card -->
+        <div class="card container p-2" style="width: 18rem;">
+            <img class="card-img-top"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">₹ 6000/kg</h5>
+                <p class="card-text text-secondary">Russian Apple ,Made in China,To be sell in india</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                    <span class="card-location text-secondary text-uppercase small">SALTLAKE SECTOR V</span>
+                    <span class="card-date text-secondary text-uppercase small">TODAY</span>
+                </div>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <div class="footer-basic bg-dark mt-5">
+        <footer>
+            <div class="social"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i
+                        class="bi bi-snapchat"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                        class="bi bi-linkedin"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">WakandaForever © 2024</p>
+        </footer>
+    </div>
+
+
+</body>
+
+
+
+        <!-- lordicon -->
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        
+        <!-- Audio -->
+        <script>
+            document.getElementById('audioButton').addEventListener('click', function () {
+                var audioPlayer = document.getElementById('audioPlayer');
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    // document.getElementById('audioButton').innerText = 'Pause Audio';
+                    localStorage.setItem('audioState', 'playing');
+                } else {
+                    audioPlayer.pause();
+                    audioPlayer.currentTime = 0;
+                    // document.getElementById('audioButton').innerText = 'Play Audio';
+                    localStorage.setItem('audioState', 'paused');
+                }
+            });
+
+            window.addEventListener('load', function () {
+                var audioPlayer = document.getElementById('audioPlayer');
+                var audioState = localStorage.getItem('audioState');
+
+                if (audioState === 'playing') {
+                    audioPlayer.play().then(() => {
+                        // document.getElementById('audioButton').innerText = 'Pause Audio';
+                    }).catch(error => {
+                        console.error('Autoplay failed:', error);
+                    });
+                }
+            });
+        </script>
+
+
+</html>
