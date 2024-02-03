@@ -82,6 +82,6 @@ app.get('/addProduct', (req, res) => {
   
 
 server.listen(PORT, () => {
-  colog.log(colog.backgroundGreen('\n\t🦊 server running at http://localhost:3000\t'));
+  console.log('\n\t🦊 server running at http://localhost:3000\t');
 });
 
