@@ -53,24 +53,24 @@ app.post('/submit_product', (req, res) => {
 
     console.log(req.body.productName);
 
-    const newProduct = new Product({
-      productName: req.body.productName,
-      productDescription: req.body.productDescription,
-      productPrice: req.body.productPrice,
-      productQuantity: req.body.productQuantity,
-      productCategory: req.body.productCategory,
-      productImage: req.body.productImage
-    });
+    // const newProduct = new Product({
+    //   productName: req.body.productName,
+    //   productDescription: req.body.productDescription,
+    //   productPrice: req.body.productPrice,
+    //   productQuantity: req.body.productQuantity,
+    //   productCategory: req.body.productCategory,
+    //   productImage: req.body.productImage
+    // });
 
-    newProduct.save((err) => {
-      if (err) {
-        console.error('Error saving product:', err);
-        res.status(500).send('Error saving product');
-      } else {
-        console.log('Product saved successfully:', newProduct);
-        res.status(200).send('Product saved successfully');
-      }
-    });
+    // newProduct.save((err) => {
+    //   if (err) {
+    //     console.error('Error saving product:', err);
+    //     res.status(500).send('Error saving product');
+    //   } else {
+    //     console.log('Product saved successfully:', newProduct);
+    //     res.status(200).send('Product saved successfully');
+    //   }
+    // });
 });
 
 app.get('/addProduct', (req, res) => {
