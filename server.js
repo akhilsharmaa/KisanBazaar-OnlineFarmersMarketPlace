@@ -6,7 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 
 
-const axios = require("axios");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = "mongodb+srv://akhilsharmaa:akhilsharmaa@web-app.jydf5ef.mongodb.net/?retryWrites=true&w=majority";
 
