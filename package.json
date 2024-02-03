@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "body-parser": "^1.20.2",
+    "colog": "^1.0.4",
     "express": "^4.18.2",
     "http": "^0.0.1-security"
   },
@@ -10,7 +11,6 @@
   "name": "farmers_marketplace",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
