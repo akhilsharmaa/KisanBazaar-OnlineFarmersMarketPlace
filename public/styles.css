@@ -1,0 +1,18 @@
+
+body {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  margin: 0;
+  background-color: rgb(0, 34, 26);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.h122{
+    background-color: rebeccapurple;
+    color: blanchedalmond;
+}
+
+/* Submit Product IMAGE */

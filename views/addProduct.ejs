@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+</head>
+<body>
+
+    <form action="/submit_product" method="post">
+        <label for="productName">Product Name:</label><br>
+        <input type="text" id="productName" name="productName" required><br><br>
+      
+        <label for="productDescription">Product Description:</label><br>
+        <textarea id="productDescription" name="productDescription" rows="4" cols="50" required></textarea><br><br>
+      
+        <label for="productPrice">Price:</label><br>
+        <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required><br><br>
+      
+        <label for="productQuantity">Quantity:</label><br>
+        <input type="number" id="productQuantity" name="productQuantity" min="1" required><br><br>
+      
+        <label for="productCategory">Category:</label><br>
+        <select id="productCategory" name="productCategory" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <!-- Add more options as needed -->
+        </select><br><br>
+      
+        <label for="productImage">Product Image:</label><br>
+        <input type="file" id="productImage" name="productImage" accept="image/*" required><br><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+
+
+    <!-- Modal Camera -->
+    <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Capture Photo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <!-- Camera -->
+                    <div id="video-container">
+                        <video id="video" autoplay></video>
+                    </div>
+                </div>
+                <div id="button-container">
+                    <button id="capture-btn" type="button" class="btn btn-danger"><i
+                            class="bi bi-camera-fill"></i></button>
+                    <button id="switch-camera-btn" type="button" class="btn btn-primary"><i
+                            class="bi bi-arrow-repeat"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      <img id="img1" crossorigin='anonymous'
+      src="https://hips.hearstapps.com/hmg-prod/images/red-fresh-apple-isolated-on-white-background-royalty-free-image-1627314996.jpg" alt="">
+
+    <div id="drop-area" ondragover="event.preventDefault()" ondrop="handleDrop(event)" ondragenter="event.target.classList.add('hover')" ondragleave="event.target.classList.remove('hover')">
+        <p>Drag & drop images here</p>
+    </div>
+    
+
+    
+      <script src="addProduct.js"></script>
+
+</body>
+
+</html>
