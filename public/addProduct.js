@@ -8,7 +8,7 @@
     function getPredictionByRoboflow(photoDataUrl, photoElement){
 
         roboflow.auth({
-            publishable_key: "rf_aBKNpcw5cid4VPIxUldvfbXI2X93"
+            publishable_key: "rf_McNp9kTLjPcQvkUPbQkTR3AmBU72"
         }).load({
             model: "fruit-detection-and-classification",
             version: 1 // <--- YOUR 1 NUMBER

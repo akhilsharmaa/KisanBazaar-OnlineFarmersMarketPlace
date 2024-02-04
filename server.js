@@ -5,7 +5,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const router = express.Router();
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -120,11 +119,33 @@ async function findProductById(productId) {
 }
 
 
-app.get('/product', async (req, res) => {
-// 65beb4b55418a669418122ac
-    findProductById("65beb4b55418a669418122ac")
-    res.render('detailedProduct');
+// app.get('/product', async (req, res) => {
+// // 65beb4b55418a669418122ac
+//     findProductById("65beb4b55418a669418122ac")
+//     res.render('detailedProduct');
+// });
+
+app.get('/product/:productId', async (req, res) => {
+  try {
+      const productId = req.params.productId;
+
+      // Find the product by its ID in the database
+      const product = await Product.findById(productId);
+
+      if (!product) {
+          // Product not found
+          res.status(404).send('Product not found');
+          return;
+      }
+
+      // Render the detailed product page with the product data
+      res.render('detailedProduct', { product });
+  } catch (error) {
+      console.error('Error fetching product:', error);
+      res.status(500).send('Error fetching product');
+  }
 });
+
   
 
 server.listen(PORT, () => {
