@@ -24,6 +24,7 @@
                 var productName = document.getElementById("productName");
                 var productDescription = document.getElementById("productDescription");
                 var productImage = document.getElementById("productImage");
+                // var cameraModal = document.getElementById("cameraModal");
 
                 productImage.value = photoDataUrl;
 
@@ -53,6 +54,14 @@
                     }else{
                         productDescription.value = "Promote digestive and cardiometabolic health, reduce inflammation, and reduce your risk for diabetes. "
                     }
+
+
+                    // cameraModal.trigger({type:"click"});
+                    $(document).ready(function(){
+
+                        $("#cameraModal").modal("hide");
+
+                    })
 
                     // var cameraModal = document.getElementById("cameraModal");
                     // cameraModal.style.display = "none";

@@ -48,13 +48,17 @@ app.post('/submit_product', (req, res) => {
       productDescription: req.body.productDescription,
       productPrice: req.body.productPrice,
       productImage: req.body.productImage,
+      mobileNumber: req.body.mobileNumber,
       userLocation: req.body.locationInput
     });
 
     newProduct.save()
       .then(savedProduct => {
+          
           console.log('Product saved successfully:', savedProduct);
-          res.status(200).send('Product saved successfully');
+          res.render('success');
+
+          
       })
       .catch(error => {
           console.error('Error saving product:', error);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    audio{
+        display: hidden;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    
+    <h1>Success </h1>
+
+    <audio id="audioPlayer" controls autoplay>
+        <source src="assets/congratulation.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+      
+</body>
+</html>
+
+
+<script>
+
+    // Get reference to the audio element
+    const audio = document.getElementById('audioPlayer');
+
+        // Check if the audio element is supported and autoplay is enabled
+        if (audio && audio.autoplay) {
+            // Start playing the audio directly
+            audio.play();
+        }
+        
+
+</script>

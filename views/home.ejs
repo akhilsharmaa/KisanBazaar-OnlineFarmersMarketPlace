@@ -131,7 +131,8 @@
 
 
         <% products.forEach(product => { %>
-            <div class="card container p-2">
+            <div onclick=""
+                class="card11 card container p-2">
                 <img class="img122 card-img-top" src="<%= product.productImage %>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">₹ <%= product.productName %>/kg</h5>
@@ -144,6 +145,7 @@
                         <!-- <span class="card-date text-secondary text-uppercase small"><%= product.date %></span> -->
                     </div>
                 </ul>
+                <button type="button" class="btn btn-success"> <i class="bi bi-telephone-plus"></i> <%= product.mobileNumber %></button>
             </div>
         <% }) %>
 

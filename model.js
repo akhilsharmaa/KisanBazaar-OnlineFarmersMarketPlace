@@ -18,6 +18,11 @@ const productSchema = new mongoose.Schema({
         type: String, // Assuming storing image as base64 string
         required: true
     }, 
+
+    mobileNumber: {
+        type: String, // Assuming storing image as base64 string
+        required: true
+    }, 
     
     userLocation: {
         type: String, // Assuming storing image as base64 string
