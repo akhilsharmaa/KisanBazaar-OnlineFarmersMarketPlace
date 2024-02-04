@@ -17,6 +17,11 @@ const productSchema = new mongoose.Schema({
     productImage: {
         type: String, // Assuming storing image as base64 string
         required: true
+    }, 
+    
+    userLocation: {
+        type: String, // Assuming storing image as base64 string
+        required: true
     }
     // Add other fields as needed
 });

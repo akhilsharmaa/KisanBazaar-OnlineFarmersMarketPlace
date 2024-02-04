@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const router = express.Router();
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -26,27 +27,6 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 const uri = "mongodb+srv://akhilsharmaa:akhilsharmaa@agrohub.lhneogk.mongodb.net/?retryWrites=true&w=majority";
 
-// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-// const client = new MongoClient(uri, {
-//   serverApi: {
-//     version: ServerApiVersion.v1,
-//     strict: true,
-//     deprecationErrors: true,
-//   }
-// });
-
-// async function run() {
-//   try {
-//     // Connect the client to the server	(optional starting in v4.7)
-//     await client.connect();
-//     // Send a ping to confirm a successful connection
-//     await client.db("admin").command({ ping: 1 });
-//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -54,13 +34,6 @@ mongoose.connect(uri, {
   bufferCommands: false, // Disable command buffering
   // other options...
 });
-
-
-// run().catch(console.dir);
-
-
-
-
 
 // Import the Product model
 const Product = require('./model.js'); // Adjust the path as per your file structure
@@ -75,7 +48,8 @@ app.post('/submit_product', (req, res) => {
       productName: req.body.productName,
       productDescription: req.body.productDescription,
       productPrice: req.body.productPrice,
-      productImage: req.body.productImage
+      productImage: req.body.productImage,
+      userLocation: req.body.locationInput
     });
 
     newProduct.save()
@@ -88,7 +62,6 @@ app.post('/submit_product', (req, res) => {
           res.status(500).send('Error saving product');
       });
 
-    // res.render('home');
 });
 
 app.get('/submit_product', (req, res) => {
@@ -99,8 +72,58 @@ app.get('/addProduct', (req, res) => {
         res.render('addProduct');
 });
 
-app.get('/', (req, res) => {
-        res.render('home');
+
+async function getProductData() {
+
+  try {
+
+    const database = client.db('test'); // Replace 'test' with your database name
+    const collection = database.collection('product'); // Replace 'product' with your collection name
+
+    // Query for documents
+    const products = await collection.find({}).toArray();
+
+    return products;
+  } catch (err) {
+    console.error('Error: ', err);
+    throw err; // Re-throw the error to be caught by the caller
+  } finally {
+    await client.close();
+  }
+}
+
+
+app.get('/', async (req, res) => {
+
+    const products = await Product.find({}).exec();
+    console.log(products);
+    res.render('home', { products });
+    
+});
+
+
+// Function to find product by _id
+async function findProductById(productId) {
+
+  try {
+      // Use findById method to find product by _id
+      const product = await Product.findById(productId);
+      if (product) {
+        console.log('Found product:', product);
+      } else {
+        console.log('Product not found');
+      }
+  } catch (error) {
+    console.error('Error finding product by id:', error);
+  }
+
+}
+
+
+app.get('/product', async (req, res) => {
+// 65beb4b55418a669418122ac
+    findProductById("65beb4b55418a669418122ac")
+    res.render('detailedProduct');
 });
   
 

@@ -3,6 +3,8 @@
 
     // const image = document
 
+
+
     function getPredictionByRoboflow(photoDataUrl, photoElement){
 
         roboflow.auth({
@@ -13,7 +15,7 @@
         }).then(function(model) {
             // model has loaded!
 
-            
+
         
             model.detect(photoElement).then(function(predictions) {
 
@@ -95,7 +97,6 @@
         const photoDataUrl = canvas.toDataURL('image/png');
         const photoElement = document.createElement('img');
 
-        //! image CLICKED
         getPredictionByRoboflow(photoDataUrl, photoElement);
 
         photoElement.src = photoDataUrl;
@@ -115,3 +116,34 @@
         await initializeCamera();
     });
 
+    
+    var requestOptions = {
+        method: 'GET',
+      };
+      
+
+    fetch("https://api.geoapify.com/v1/geocode/reverse?lat=22.5726608&lon=88.4373123&apiKey=e1182357f1e6483c812fd6bd0731f496", requestOptions)
+        .then(response => response.json())
+        .then((result) => {
+
+            const myCurrLcation =  result["features"][0]["properties"]["address_line2"];
+            
+            const locationInput = document.getElementById('locationInput');
+            locationInput.value = myCurrLcation;
+
+        })
+        .catch(error => console.log('error', error));
+
+
+
+    // const x = document.getElementById("demo");
+        
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition();
+      } else {
+        // x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    getLocation();

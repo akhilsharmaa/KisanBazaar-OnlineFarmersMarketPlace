@@ -21,6 +21,7 @@
 
     <%- include('nav'); %>
 
+
     <!-- Product Listing Form -->
     <div class="form-container container my-5 p-5 glass-card">
         <form action="/submit_product" class="container form-group" method="post">
@@ -51,6 +52,21 @@
                 <label for="productImage">Product Image</label><br>
                 <input type="base64" id="productImage" name="productImage" class="form-control"
                     required><br>
+            </div>
+
+
+            <!-- Quantity  -->
+            <div class="form-group">
+                <label for="productQuantity">Product Quantity</label><br>
+                <input type="base64" id="productQuantity" name="productQuantity" class="form-control"
+                    required><br>
+            </div>
+
+
+            <!-- Location Image -->
+            <div class="form-group">
+                <label for="locationInput">Location</label><br>
+                <input type="text" id="locationInput" name="locationInput" class="form-control" required><br>
             </div>
 
 
@@ -86,8 +102,9 @@
     <img src="" alt="">
 
 
-
     <script src="addProduct.js"></script>
+
+
 
 </body>
 

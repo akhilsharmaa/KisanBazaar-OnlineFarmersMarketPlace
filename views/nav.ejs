@@ -4,8 +4,8 @@
         <a class="navbar-brad" href="#"><img src="assets/logo1.png" alt="" class="mainlogo1"><img
                 src="assets/imgonline-com-ua-resize-C1WIevNuun97.png" alt="" class="mainlogo2">
         </a>
-<!-- 
-        <div class=" location-container">
+
+        <div class="location-container">
             <div class="dropdown">
                 <button class="btn dropdown-toggle d-flex align-items-center" type="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -14,28 +14,16 @@
                         style="width:25px;height:25px">
                     </lord-icon>
                     </lord-icon>
-                    <span class="ps-1">All India</span>
+                    <div id="locationInputNav" class="ps-1">All India</div>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-light" id="location-dropdown">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-crosshair2"></i> Use current
-                            location</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li><a class="dropdown-item active" href="#">Kolkata</a></li>
-                    <li><a class="dropdown-item" href="#">Patna</a></li>
-                    <li><a class="dropdown-item" href="#">Punjab</a></li>
-                    <li><a class="dropdown-item" href="#">Lucknow</a></li>
-                    <li><a class="dropdown-item" href="#">Haryana</a></li>
-                </ul>
+                
             </div>
-        </div> -->
+        </div> 
 
 
         
         <!-- Login Register Phone -->
-        <div class="login-register-btn-up">
+        <!-- <div class="login-register-btn-up">
             <button type="button" class="btn btn-secondary"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 data-bs-toggle="modal" data-bs-target="#login">Log
@@ -43,7 +31,7 @@
             <button type="button" class="btn btn-success"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 data-bs-toggle="modal" data-bs-target="#registermodal">Sign Up</button>
-        </div>
+        </div> -->
 
 
         <div class="search-container">
@@ -65,13 +53,14 @@
 
 
         <!-- Login Register Desktop -->
-        <div class="login-register-btn-down p-2">
+        <!-- <div class="login-register-btn-down p-2">
             <button type="button" class="btn btn-secondary btn-md" data-bs-toggle="modal"
                 data-bs-target="#login">Log
                 In</button>
             <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal"
                 data-bs-target="#registermodal">Sign Up</button>
-        </div>
+        </div> -->
+
 
         <!-- Login Modal -->
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,3 +171,39 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+
+    var requestOptions = {
+        method: 'GET',
+      };
+      
+
+    fetch("https://api.geoapify.com/v1/geocode/reverse?lat=22.5726608&lon=88.4373123&apiKey=e1182357f1e6483c812fd6bd0731f496", requestOptions)
+        .then(response => response.json())
+        .then((result) => {
+
+            const myCurrLcation =  result["features"][0]["properties"]["address_line2"];
+            
+            const locationInputNav = document.getElementById('locationInputNav');
+            locationInputNav.innerHTML = myCurrLcation.substring(0, 20);
+
+        })
+        .catch(error => console.log('error', error));
+
+
+
+    // const x = document.getElementById("demo");
+        
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition();
+      } else {
+        // x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+
+</script>
