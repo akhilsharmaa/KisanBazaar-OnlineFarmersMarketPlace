@@ -18,102 +18,100 @@
 <body>
 
     <%- include('nav'); %>
-    
-
-    <!-- Main Button -->
-    <div class="main-btn">
 
 
-            <button  class="btn-graph" data-bs-toggle="modal" data-bs-target="#graphModal">
-                
+        <!-- Main Button -->
+        <div class="main-btn">
+
+
+            <button class="btn-graph" data-bs-toggle="modal" data-bs-target="#graphModal">
                 <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="loop"
                         delay="1000" stroke="bold" state="loop-all" style="width:50px;height:50px">
                     </lord-icon></div>
             </button>
 
-        <button  onclick="window.location.href='./addProduct';" class="btn-demand" data-bs-toggle="modal" data-bs-target="#cameraModal">
-            <div class="demand-btn-text"><lord-icon
-                src="https://cdn.lordicon.com/pdsourfn.json"
-                trigger="hover"
-                stroke="bold"
-                colors="primary:#121331,secondary:#ffffff,tertiary:#c71f16"
-                style="width:50px;height:50px">
-            </lord-icon></div>
-        </button>
-    </div>
-
-    <div class="btn-home">
-        <img src="assets/kisanbazaar-favicon-color.png" alt="" style="height: 70px; width: 70px;">
-    </div>
-
-
-
-
-    <!-- Modal Graph -->
-    <div class="modal fade" id="graphModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class=" modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content container">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detailed Graph</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Graph -->
-                    <canvas class="horizontalBar"></canvas>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
+            <button onclick="window.location.href='./addProduct';" class="btn-demand" data-bs-toggle="modal"
+                data-bs-target="#cameraModal">
+                <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/pdsourfn.json" trigger="hover"
+                        stroke="bold" colors="primary:#121331,secondary:#ffffff,tertiary:#c71f16"
+                        style="width:50px;height:50px">
+                    </lord-icon></div>
+            </button>
         </div>
-    </div>
 
-    <!-- Modal Camera -->
-    <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class=" modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Capture Photo</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <!-- Camera -->
-                    <div id="video-container">
-                        <video id="video" autoplay></video>
+        <button class="btn-home">
+            <img src="assets/kisanbazaar-favicon-color.png" alt="" style="height: 70px; width: 70px;">
+        </button>
+
+
+
+
+        <!-- Modal Graph -->
+        <div class="modal fade" id="graphModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content container">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Detailed Graph</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Graph -->
+                        <canvas class="horizontalBar"></canvas>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <div id="button-container">
-                    <button id="capture-btn" type="button" class="btn btn-danger"><i
-                            class="bi bi-camera-fill"></i></button>
-                    <button id="switch-camera-btn" type="button" class="btn btn-primary"><i
-                            class="bi bi-arrow-repeat"></i></button>
+            </div>
+        </div>
+
+        <!-- Modal Camera -->
+        <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Capture Photo</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+
+                        <div id="video-container">
+                            <video id="video" autoplay></video>
+                        </div>
+                    </div>
+                    <div id="button-container">
+                        <button id="capture-btn" type="button" class="btn btn-danger"><i
+                                class="bi bi-camera-fill"></i></button>
+                        <button id="switch-camera-btn" type="button" class="btn btn-primary"><i
+                                class="bi bi-arrow-repeat"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Hero Section -->
-    <div class="hero-main-container">
-        <div class="mic-button-container">
-        </div>
-        <audio id="audioPlayer" src="assets/intro.m4a" autoplay></audio>
-        <div class="container-hero">
-            <div class="glass-card">
-                <h1>Buy and Sell<br>
-                    with Kisanbazaar!</h1>
+
+        <!-- Hero Section -->
+        <div class="hero-main-container">
+            <div class="mic-button-container">
+            </div>
+            <audio id="audioPlayer" src="assets/intro.m4a" autoplay></audio>
+            <div class="container-hero">
+                <div class="glass-card">
+                    <h1>Buy and Sell<br>
+                        with Kisanbazaar!</h1>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="mic-button-container">
-        <button id="audioButton" class="intro-sound"><lord-icon src="https://cdn.lordicon.com/bpmdxzpd.json"
-                trigger="loop" delay="1000" class="mic-icon">
-            </lord-icon></button>
-    </div>
+        <div class="mic-button-container">
+            <button id="audioButton" class="intro-sound"><lord-icon src="https://cdn.lordicon.com/bpmdxzpd.json"
+                    trigger="loop" delay="1000" class="mic-icon">
+                </lord-icon></button>
+        </div>
 
-    <div class="container-xl mt-5 d-flex flex-wrap gap-3">
+        <div class="container-xl mt-5 d-flex flex-wrap gap-3">
 
-        <!-- card -->
-        <!-- <div class="card container p-2" style="width: 18rem;">
+            <!-- card -->
+            <!-- <div class="card container p-2" style="width: 18rem;">
             <img class="card-img-top"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24zCABlBPnIJk4mepaF-EeqQPSVZZI7-gRQ&usqp=CAU"
                 alt="Card image cap">
@@ -130,90 +128,132 @@
         </div> -->
 
 
-        <% products.forEach(product => { %>
-            <div onclick=""
-                class="card11 card container p-2">
-                <img class="img122 card-img-top" src="<%= product.productImage %>" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">₹ <%= product.productName %>/kg</h5>
-                    <h3 class="card-title fw-bold">₹ <%= product.productPrice %>/kg</h5>
-                    <p class="card-text text-secondary"><%= product.productDescription %></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
-                        <span class="card-location text-secondary text-uppercase small"><%= product.userLocation %></span>
-                        <!-- <span class="card-date text-secondary text-uppercase small"><%= product.date %></span> -->
+            <% products.forEach(product=> { %>
+                <div onclick="" class="card11 card container p-2">
+                    <img class="img122 card-img-top" src="<%= product.productImage %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">₹ <%= product.productName %>/kg</h5>
+                        <h3 class="card-title fw-bold">₹ <%= product.productPrice %>/kg</h5>
+                                <p class="card-text text-secondary">
+                                    <%= product.productDescription %>
+                                </p>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <div class="card-location-time d-flex justify-content-between p-1" style="font-size: 13px;">
+                            <span class="card-location text-secondary text-uppercase small">
+                                <%= product.userLocation %>
+                            </span>
+                            <!-- <span class="card-date text-secondary text-uppercase small"><%= product.date %></span> -->
+                        </div>
+                    </ul>
+                    <button type="button" class="btn btn-success"> <i class="bi bi-telephone-plus"></i>
+                        <%= product.mobileNumber %>
+                    </button>
+                </div>
+                <% }) %>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <div class="footer-basic bg-dark mt-5">
+            <footer>
+                <div class="social"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i
+                            class="bi bi-snapchat"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                            class="bi bi-linkedin"></i></a>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Home</a></li>
+                    <li class="list-inline-item"><a href="#">Services</a></li>
+                    <li class="list-inline-item"><a href="#">About</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
                 </ul>
-                <button type="button" class="btn btn-success"> <i class="bi bi-telephone-plus"></i> <%= product.mobileNumber %></button>
-            </div>
-        <% }) %>
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <div class="footer-basic bg-dark mt-5">
-        <footer>
-            <div class="social"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i
-                        class="bi bi-snapchat"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
-                        class="bi bi-linkedin"></i></a>
-            </div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Services</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-            </ul>
-            <p class="copyright">WakandaForever © 2024</p>
-        </footer>
-    </div>
+                <p class="copyright">WakandaForever © 2024</p>
+            </footer>
+        </div>
 
 
 </body>
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
 
+<!-- lordicon -->
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
 
-        <!-- lordicon -->
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        
-        <!-- Audio -->
-        <script>
-            document.getElementById('audioButton').addEventListener('click', function () {
-                var audioPlayer = document.getElementById('audioPlayer');
-                if (audioPlayer.paused) {
-                    audioPlayer.play();
-                    // document.getElementById('audioButton').innerText = 'Pause Audio';
-                    localStorage.setItem('audioState', 'playing');
-                } else {
-                    audioPlayer.pause();
-                    audioPlayer.currentTime = 0;
-                    // document.getElementById('audioButton').innerText = 'Play Audio';
-                    localStorage.setItem('audioState', 'paused');
-                }
+<!-- Audio -->
+<script>
+    document.getElementById('audioButton').addEventListener('click', function () {
+        var audioPlayer = document.getElementById('audioPlayer');
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            // document.getElementById('audioButton').innerText = 'Pause Audio';
+            localStorage.setItem('audioState', 'playing');
+        } else {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            // document.getElementById('audioButton').innerText = 'Play Audio';
+            localStorage.setItem('audioState', 'paused');
+        }
+    });
+
+    window.addEventListener('load', function () {
+        var audioPlayer = document.getElementById('audioPlayer');
+        var audioState = localStorage.getItem('audioState');
+
+        if (audioState === 'playing') {
+            audioPlayer.play().then(() => {
+                // document.getElementById('audioButton').innerText = 'Pause Audio';
+            }).catch(error => {
+                console.error('Autoplay failed:', error);
             });
+        }
+    });
+</script>
 
-            window.addEventListener('load', function () {
-                var audioPlayer = document.getElementById('audioPlayer');
-                var audioState = localStorage.getItem('audioState');
-
-                if (audioState === 'playing') {
-                    audioPlayer.play().then(() => {
-                        // document.getElementById('audioButton').innerText = 'Pause Audio';
-                    }).catch(error => {
-                        console.error('Autoplay failed:', error);
-                    });
-                }
-            });
-        </script>
+<!-- chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script>
+    //Graph
+    new Chart(document.querySelector(".horizontalBar"), {
+        "type": "horizontalBar",
+        "data": {
+            "labels": ["Rice", "Paddy", "Wheat", "Jute", "Maize", "Oil Seeds", "Barley"],
+            "datasets": [{
+                "label": "Demand Graph",
+                "data": [70, 44, 35, 69, 50, 23, 14],
+                "fill": false,
+                "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                    "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+                    "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"
+                ],
+                "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                    "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"
+                ],
+                "borderWidth": 2
+            }]
+        },
+        "options": {
+            "scales": {
+                "xAxes": [{
+                    "ticks": {
+                        "beginAtZero": true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 
 
 </html>
