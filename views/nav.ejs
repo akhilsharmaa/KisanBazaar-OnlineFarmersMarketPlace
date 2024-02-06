@@ -7,8 +7,8 @@
 
         <div class="location-container">
             <div class="dropdown">
-                <button class="btn dropdown-toggle d-flex align-items-center" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <lord-icon src="https://cdn.lordicon.com/tdtlrbly.json" trigger="hover" stroke="bold"
                         state="hover-jump-roll" colors="primary:#121331,secondary:#16c72e"
                         style="width:25px;height:25px">
@@ -16,12 +16,12 @@
                     </lord-icon>
                     <div id="locationInputNav" class="ps-1">All India</div>
                 </button>
-                
+
             </div>
-        </div> 
+        </div>
 
 
-        
+
         <!-- Login Register Phone -->
         <!-- <div class="login-register-btn-up">
             <button type="button" class="btn btn-secondary"
@@ -110,14 +110,14 @@
 <!-- Main Button -->
 <div class="main-btn">
     <button class="btn-graph" data-bs-toggle="modal" data-bs-target="#graphModal">
-        <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="loop"
-                delay="1000" stroke="bold" state="loop-all" style="width:50px;height:50px">
+        <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="loop" delay="1000"
+                stroke="bold" state="loop-all" style="width:50px;height:50px">
             </lord-icon></div>
     </button>
 
     <button class="btn-demand" data-bs-toggle="modal" data-bs-target="#cameraModal">
-        <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/vneufqmz.json" trigger="loop"
-                delay="2000" style="width:50px;height:50px">
+        <div class="demand-btn-text"><lord-icon src="https://cdn.lordicon.com/vneufqmz.json" trigger="loop" delay="2000"
+                style="width:50px;height:50px">
             </lord-icon></div>
     </button>
 </div>
@@ -163,8 +163,7 @@
                 </div>
             </div>
             <div id="button-container">
-                <button id="capture-btn" type="button" class="btn btn-danger"><i
-                        class="bi bi-camera-fill"></i></button>
+                <button id="capture-btn" type="button" class="btn btn-danger"><i class="bi bi-camera-fill"></i></button>
                 <button id="switch-camera-btn" type="button" class="btn btn-primary"><i
                         class="bi bi-arrow-repeat"></i></button>
             </div>
@@ -178,15 +177,15 @@
 
     var requestOptions = {
         method: 'GET',
-      };
-      
+    };
+
 
     fetch("https://api.geoapify.com/v1/geocode/reverse?lat=22.5726608&lon=88.4373123&apiKey=e1182357f1e6483c812fd6bd0731f496", requestOptions)
         .then(response => response.json())
         .then((result) => {
 
-            const myCurrLcation =  result["features"][0]["properties"]["address_line2"];
-            
+            const myCurrLcation = result["features"][0]["properties"]["address_line2"];
+
             const locationInputNav = document.getElementById('locationInputNav');
             locationInputNav.innerHTML = myCurrLcation.substring(0, 20);
 
@@ -196,14 +195,47 @@
 
 
     // const x = document.getElementById("demo");
-        
+
     function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition();
-      } else {
-        // x.innerHTML = "Geolocation is not supported by this browser.";
-      }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition();
+        } else {
+            // x.innerHTML = "Geolocation is not supported by this browser.";
+        }
     }
 
 
+</script>
+<!-- chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script>
+    //Graph
+    new Chart(document.querySelector(".horizontalBar"), {
+        "type": "horizontalBar",
+        "data": {
+            "labels": ["Rice", "Paddy", "Wheat", "Jute", "Maize", "Oil Seeds", "Barley"],
+            "datasets": [{
+                "label": "Demand Graph",
+                "data": [70, 44, 35, 69, 50, 23, 14],
+                "fill": false,
+                "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                    "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+                    "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"
+                ],
+                "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                    "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"
+                ],
+                "borderWidth": 2
+            }]
+        },
+        "options": {
+            "scales": {
+                "xAxes": [{
+                    "ticks": {
+                        "beginAtZero": true
+                    }
+                }]
+            }
+        }
+    });
 </script>
