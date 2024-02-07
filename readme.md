@@ -2,7 +2,12 @@
 
 ## Project Overview
 
-Kisan Bazaar is an innovative online marketplace designed to empower farmers by providing them with a user-friendly platform to sell their crops and fruits. The platform incorporates an advanced Object Detection model using YOLOv5, simplifying the listing process for farmers with limited technical knowledge.
+
+Kisan Bazaar is an innovat
+
+https://github.com/akhilsharmaa/KisanBazar_FarmersEcommers_with_ObjectDetection/assets/74103314/da4bcac5-d478-4fdd-b3fe-b8b7061bfe4f
+
+ive online marketplace designed to empower farmers by providing them with a user-friendly platform to sell their crops and fruits. The platform incorporates an advanced Object Detection model using YOLOv5, simplifying the listing process for farmers with limited technical knowledge.
 
 ## Features
 
